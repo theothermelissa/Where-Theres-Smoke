@@ -1,22 +1,23 @@
-import React, { Component } from "react";
 import styled from "styled-components";
-// import smoke from "./images/smoke.png"
-
-const SpinRight = keyframes`
-from { transform: rotate(0deg); }
-to { transform: rotate(360deg); }
-`;
-
-const SpinLeft = keyframes`
-from { transform: rotate(360deg); }
-to { transform: rotate(0deg); }
-`;
 
 const extraslow = "270s";
 const slow = "200s";
 const medium = "150s";
 const fast = "90s";
 const extrafast = "15s";
+const SpinRight = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+  `;
+const SpinLeft = keyframes`
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+  `;
+
+export const BackgroundSpin = styled.div`
+  animation: ${SpinLeft} ${extraslow} ease-in-out infinite;
+  `;
+
 
 export const ExtraSlowSpin = styled.div`
   animation: ${SpinRight} ${extraslow} linear infinite;
@@ -38,4 +39,4 @@ export const ExtraFastSpin = styled.div`
   animation: ${SpinRight} ${extrafast} linear infinite;
 `;
 
-// ExtraSlowSpin, SlowSpin, MediumSpin, FastSpin, ExtraFastSpin
+// BackgroundSpin, ExtraSlowSpin, SlowSpin, MediumSpin, FastSpin, ExtraFastSpin
