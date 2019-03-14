@@ -3,24 +3,31 @@ import styled, { keyframes } from "styled-components";
 import smoke from "../images/smoke.png";
 import { SpinLeft, SpinRight, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
 import ButtonList from "./ColorButtons/ButtonList";
-import Button from "./ColorButtons/Button";
 import colors from "./colorsForButtons";
+import SpeedSlider from './Slider';
+import ImageControls from './ImageControls';
 
 const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
 
 
 
 const BodyContainer = styled.div`
-  margin: 0px;
+  margin: -5vw;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 110%;
+  height: 110%;
+  align-items: center;
+  background-color: ${cream};
   `;
 
 const SmokeBackground = styled.div`
   position: relative;
   /* display: block; */
   box-sizing: border-box;
-  margin: -5vw -10vw 0 -10vw;
+  /* margin: -5vw -10vw 0 -10vw; */
   height: 70vh;
   width: 110vw;
   /* align-items: center; */
@@ -70,9 +77,18 @@ const BottomImage = styled.img`
   width: auto;
   margin: 0px;
   height: 2200px;
-  animation: ${SpinLeft} ${Fast} ease-in-out infinite;
+  /* animation: ${SpinLeft} ${Fast} ease-in-out infinite; */
+  animation: ${SpinLeft} ${props => props.speed} ease-in-out infinite;
+  /* animation-direction: ${props => props.direction};
+  animation-duration: ${props => props.speed};
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; */
   `;
 
+const SliderContainer = styled.div`
+  position: relative;
+
+  `;
 
 
 const BodyContent = () => (
@@ -81,10 +97,11 @@ const BodyContent = () => (
       <BackImage src={smoke} alt="Smoke" />
       <MiddleImage src={smoke} alt="Smoke" />
       <FrontImage src={smoke} alt="Smoke" />
-      <BottomImage src={smoke} alt="Smoke" />
+      <BottomImage src={smoke} alt="Smoke" speed="40s" />
     </SmokeBackground>
     <ButtonList />
       {/* <Button name="Mint" color='#1EBC93' /> */}
+    <ImageControls />
   </BodyContainer>
   );
 

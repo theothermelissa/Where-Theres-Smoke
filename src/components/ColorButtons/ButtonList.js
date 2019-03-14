@@ -7,10 +7,10 @@ import _ from "lodash";
 // const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
 
 const ButtonContainer = styled.span`
-  /* display: flex; */
-  flex-direction: row;
-  /* width: 100%; */
-  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  width: 60%;
+  margin: 30px;
   align-items: center;
   justify-content: center;
   `;
