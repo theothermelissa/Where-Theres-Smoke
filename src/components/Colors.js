@@ -11,4 +11,5 @@ export const MintGradient = "linear-gradient(${mint}, ${lightmint}, white)";
 export const CoralGradient = "linear-gradient(${coral}, ${lightcoral}, white)";
 
 
+
 // lightestgray, mediumgray, charcoal, mint, lightmint, coral, lightcoral, cream, GrayGradient, MintGradient, CoralGradient

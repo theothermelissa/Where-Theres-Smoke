@@ -2,9 +2,11 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import smoke from "../images/smoke.png";
 import { SpinLeft, SpinRight, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
-import { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream, GrayGradient, MintGradient, CoralGradient } from "./Colors";
 import ButtonList from "./ColorButtons/ButtonList";
 import Button from "./ColorButtons/Button";
+import colors from "./colorsForButtons";
+
+const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
 
 
 
@@ -24,7 +26,7 @@ const SmokeBackground = styled.div`
   /* align-items: center; */
   /* justify-content: center; */
   overflow: hidden;
-  background: ${charcoal};
+  background: ${darkmint};
   `;
 
 const BackImage = styled.img`
@@ -81,8 +83,8 @@ const BodyContent = () => (
       <FrontImage src={smoke} alt="Smoke" />
       <BottomImage src={smoke} alt="Smoke" />
     </SmokeBackground>
-    {/* <ButtonList /> */}
-      <Button />
+    <ButtonList />
+      {/* <Button name="Mint" color='#1EBC93' /> */}
   </BodyContainer>
   );
 

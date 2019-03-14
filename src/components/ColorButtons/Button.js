@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 
+
 // const ButtonContainer = styled.div`
 //   display: flex;
 //   width: 10%;
@@ -17,18 +18,19 @@ const ColorName = styled.h2`
   `;
 
 const ColorButton = styled.button`
-  display: block; 
-  margin: 5vw;
-  padding: .5em;
+  margin: 5px;
+  min-width: 200px;
+  border: 0;
   border-radius: 7px;
-  background-color: red;
+  background-color: ${ ({color}) => color };
+  
   `;
 
-const Button = () => (
+const Button = ({ name, hexValue }) => (
   // <ButtonContainer>
-    <ColorButton>
+    <ColorButton color={hexValue}>
       <ColorName>
-        Tomato
+        {name}
       </ColorName>
     </ColorButton>
   // </ButtonContainer>
