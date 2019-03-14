@@ -6,13 +6,14 @@ const ColorName = styled.h2`
   font-size: 1.5em;
   font-weight: bold;
   text-transform: uppercase;
+  margin: 0;
   `;
 
 const ColorButton = styled.button`
   margin: 5px;
   min-width: 200px;
-  padding: 5px;
-  border: 4px solid white;
+  padding: 10px;
+  border: 0px;
   border-radius: 15px;
   background-color: ${ ({color}) => color };
   `;

@@ -4,7 +4,7 @@ import smoke from "../images/smoke.png";
 import { SpinLeft, SpinRight, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
 import ButtonList from "./ColorButtons/ButtonList";
 import colors from "./colorsForButtons";
-import SpeedSlider from './Slider';
+import SpeedSlider from './SpeedSlider';
 import ImageControls from './ImageControls';
 
 const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
@@ -100,8 +100,8 @@ const BodyContent = () => (
       <BottomImage src={smoke} alt="Smoke" speed="40s" />
     </SmokeBackground>
     <ButtonList />
-      {/* <Button name="Mint" color='#1EBC93' /> */}
     <ImageControls />
+      {/* <Button name="Mint" color='#1EBC93' /> */}
   </BodyContainer>
   );
 

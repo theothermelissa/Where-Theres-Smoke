@@ -1,6 +1,8 @@
 import React from "react";
-import { Slider, Icon } from 'antd';
 import styled from 'styled-components';
+import SpeedSlider from './SpeedSlider';
+import OpacitySlider from './OpacitySlider';
+
 
 const ControlsContainer = styled.div`
   display: flex;
@@ -44,7 +46,8 @@ class ImageControls extends React.Component {
 
     return (
       <ControlsContainer>
-        <Slider />
+        <SpeedSlider />
+        <OpacitySlider />
       </ControlsContainer>
     );
   }

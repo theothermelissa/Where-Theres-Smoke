@@ -7,8 +7,9 @@ const MIN_SPEED = 15;
 
 
 const SliderWrapper = styled.div`
+  box-sizing; border-box;
   position: relative;
-  width: 40vw;
+  width: 30vw;
   padding: 0px 30px;
   .anticon {
     position: absolute;
