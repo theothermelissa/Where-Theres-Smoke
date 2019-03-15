@@ -18,8 +18,9 @@ const ColorButton = styled.button`
   background-color: ${ ({color}) => color };
   `;
 
-const Button = ({ name, hexValue }) => (
-    <ColorButton color={hexValue}>
+
+const Button = ({ name, hexValue, setBackgroundColor }) => (
+    <ColorButton color={hexValue} onClick={ () => setBackgroundColor(hexValue)}>
       <ColorName>
         {name}
       </ColorName>

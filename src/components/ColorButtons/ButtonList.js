@@ -18,15 +18,16 @@ const ButtonContainer = styled.span`
 
 
 
-const ButtonList = () => {
-return (
-  <ButtonContainer> {
-    _.toPairs(colors).map( foo => (
-        <Button key={foo[1]} name={foo[0]} hexValue={foo[1]} />
+const ButtonList = ({ setBackgroundColor }) => {
+
+  return (
+    <ButtonContainer> {
+    _.toPairs(colors).map( ([colorName, hexValue]) => (
+        <Button setBackgroundColor={setBackgroundColor} key={hexValue} name={colorName} hexValue={hexValue} />
     ))
   }</ButtonContainer>
 )}
-
+// setBackgroundColor(hexValue)
   
   
   // <ButtonHolder>

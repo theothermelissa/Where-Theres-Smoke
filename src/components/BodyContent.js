@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import smoke from "../images/smoke.png";
 import { SpinLeft, SpinRight, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
@@ -33,7 +33,7 @@ const SmokeBackground = styled.div`
   /* align-items: center; */
   /* justify-content: center; */
   overflow: hidden;
-  background: ${darkmint};
+  background: ${props => props.backgroundColor};
   `;
 
 const BackImage = styled.img`
@@ -91,19 +91,30 @@ const SliderContainer = styled.div`
   `;
 
 
-const BodyContent = () => (
-  <BodyContainer>
-    <SmokeBackground>
-      <BackImage src={smoke} alt="Smoke" />
-      <MiddleImage src={smoke} alt="Smoke" />
-      <FrontImage src={smoke} alt="Smoke" />
-      <BottomImage src={smoke} alt="Smoke" speed="40s" />
-    </SmokeBackground>
-    <ButtonList />
-    <ImageControls />
-      {/* <Button name="Mint" color='#1EBC93' /> */}
-  </BodyContainer>
-  );
+class BodyContent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      backgroundColor: charcoal,
+      // speed: 90s,
+    }
+  }
+
+  render() {
+    return (
+    <BodyContainer>
+      <SmokeBackground backgroundColor={this.state.backgroundColor}>
+        <BackImage src={smoke} alt="Smoke" />
+        <MiddleImage src={smoke} alt="Smoke" />
+        <FrontImage src={smoke} alt="Smoke" />
+        <BottomImage src={smoke} alt="Smoke" speed="90s" />
+      </SmokeBackground>
+      <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/>
+      <ImageControls />
+        {/* <Button name="Mint" color='#1EBC93' /> */}
+    </BodyContainer>
+  )}
+};
 
 
 
