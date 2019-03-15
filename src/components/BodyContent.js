@@ -4,7 +4,7 @@ import smoke from "../images/smoke.png";
 import { SpinLeft, SpinRight, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
 import ButtonList from "./ColorButtons/ButtonList";
 import colors from "./colorsForButtons";
-// import SpeedSlider from './SpeedSlider';
+import ControlPanel from './ControlPanel';
 import ImageControls from './ImageControls';
 
 const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
@@ -140,7 +140,7 @@ class BodyContent extends Component {
         <LowerImage src={smoke} alt="Smoke" speed={speedInSeconds} />
       </SmokeBackground>
       <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/>
-      <ImageControls handleChange={this.handleChange} />
+      <ImageControls handleSpeedChange={this.handleSpeedChange} />
     </BodyContainer>
   )}
 

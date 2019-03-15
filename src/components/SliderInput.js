@@ -4,8 +4,12 @@ import styled from 'styled-components';
 
 const MAX_SPEED = 300;
 const MIN_SPEED = 15;
+const MIN_SIZE = 500;
+const MAX_SIZE = 2500;
+const MIN_OPACITY = 0;
+const MAX_OPACITY = 100;
 
-const SliderWrapper = styled.div`
+const Tray = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -16,7 +20,7 @@ const SliderName = styled.h3`
   color: rgba(0, 0, 0, .25);
   `;
 
-const IndividualSlider = styled.div`
+const SliderBox = styled.div`
   /* display: flex; */
   /* flex-flow: row wrap; */
   position: relative;
@@ -43,19 +47,28 @@ const IndividualSlider = styled.div`
   }
 `;
 
-const formatter = value => {
-  return `${value}s`;
-}
+const SliderInput = (props) => {
+  const { 
+    handleSpeedChange,
+    name,
+    max,
+    min,
+    defaultValue,
+    formatter,
+    firstIcon,
+    secondIcon 
+  } = props;
 
-const SpeedSlider = ({ sliderName, max, min, handleSpeedChange, defaultSpeed }) => (
-  <SliderWrapper>
-    <SliderName>{sliderName}</SliderName>
-    <IndividualSlider>
-      <Icon type="caret-up" />
-      <Slider onChange={handleSpeedChange} min={min || MIN_SPEED} max={max || MAX_SPEED} tipFormatter={formatter} defaultValue={defaultSpeed} />
-      <Icon type="caret-down" />
-    </IndividualSlider>
-  </SliderWrapper>
-);
+  return (
+    <Tray>
+      <SliderName>{name}</SliderName>
+      <SliderBox>
+        {/* <Icon type={firstIcon} /> */}
+        <Slider onChange={handleSpeedChange} min={min || MIN_SPEED} max={max || MAX_SPEED} tipFormatter={formatter} />
+        {/* <Icon type={secondIcon} /> */}
+      </SliderBox>
+    </Tray>
+  )
+};
 
-export default SpeedSlider;
+export default SliderInput;
