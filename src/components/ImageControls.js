@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SpeedSlider from './SpeedSlider';
 import OpacitySlider from './OpacitySlider';
 import { Radio } from 'antd';
+
 // import RadioGroup from "antd/lib/radio/group";
 
 
@@ -15,6 +16,8 @@ const ControlsContainer = styled.div`
   align-items: center;
   justify-content: center;
   `;
+
+
 
 class DirectionButtons extends React.Component {
   constructor(props) {
@@ -40,16 +43,14 @@ class DirectionButtons extends React.Component {
 };
 
 const ImageControls = (props) => {
-  // const {
-  //   handleSpeedChange,
-  //   handleOpacityChange,
-  //   handleDirectionChange
-  // } = props;
+
+  // const 
 
   return (
     <ControlsContainer>
-      <SpeedSlider {...props}/>
+      {/* <SpeedSlider defaultSpeed={defaultSpeed} {...props}/> */}
       <OpacitySlider />
+      {/* <SizeSlider /> */}
       <DirectionButtons />
     </ControlsContainer>
   );

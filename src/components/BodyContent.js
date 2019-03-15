@@ -4,7 +4,7 @@ import smoke from "../images/smoke.png";
 import { SpinLeft, SpinRight, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
 import ButtonList from "./ColorButtons/ButtonList";
 import colors from "./colorsForButtons";
-import SpeedSlider from './SpeedSlider';
+// import SpeedSlider from './SpeedSlider';
 import ImageControls from './ImageControls';
 
 const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
@@ -69,7 +69,7 @@ const FrontImage = styled.img`
   animation: ${SpinRight} ${Extraslow} linear infinite;
   `;
 
-const BottomImage = styled.img`
+const LowerImage = styled.img`
   position: absolute;  
   left: -300px;
   top: 200px;
@@ -93,18 +93,42 @@ class BodyContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      backgroundColor: charcoal,
-      speed: 40,
+      background: {
+        color: charcoal,
+      },
+      lower: {  
+        // imageID: "",
+        speed: 150,
+        direction: "left",
+        opacity: .5,
+        size: 2200,
+      },
+      back: {  
+        // imageID: "",
+        speed: 150,
+        direction: "left",
+        size: 2400,
+        opacity: .5,
+      },
+      middle: {  
+        // imageID: "",
+        speed: 150,
+        direction: "left",
+        size: 1400,
+        opacity: .5,
+      },
+      front: {  
+        // imageID: "",
+        speed: 150,
+        direction: "left",
+        opacity: .5,
+        size: 1700,
+      },
     }
-    // this.state = {
-    //   imageID: "",
-    //   speed: "",
-    //   direction: "",
-    //   opacity: "",
-    //   size: "",
-    // }
   }
-  
+  // componentDidUpdate() {
+  //   this.handleImageChange("back", "speed", 27);
+  // }
   render() {
     const speedInSeconds = `${this.state.speed}s`;
     return (
@@ -113,28 +137,32 @@ class BodyContent extends Component {
         <BackImage src={smoke} alt="Smoke" />
         <MiddleImage src={smoke} alt="Smoke" />
         <FrontImage src={smoke} alt="Smoke" />
-        <BottomImage src={smoke} alt="Smoke" speed={speedInSeconds} />
+        <LowerImage src={smoke} alt="Smoke" speed={speedInSeconds} />
       </SmokeBackground>
       <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/>
-      <ImageControls handleSpeedChange={this.handleSpeedChange}/>
+      <ImageControls handleChange={this.handleChange} />
     </BodyContainer>
   )}
 
-  handleSpeedChange = (speed) => {
-    this.setState({ speed });
-  }
 
-  handleOpacityChange = (opacity) => {
-    this.setState({ opacity });
+  handleChange = (imageName, property, value) => {
+    this.setState({ [imageName]:{[property]: value }});
   }
+  // handleSpeedChange = (speed) => {
+  //   this.setState({ speed });
+  // }
 
-  handleDirectionChange = (direction) => {
-    this.setState({ direction });
-  }
+  // handleOpacityChange = (opacity) => {
+  //   this.setState({ opacity });
+  // }
 
-  handleSizeChange = (size) => {
-    this.setState({ size });
-  }
+  // handleDirectionChange = (direction) => {
+  //   this.setState({ direction });
+  // }
+
+  // handleSizeChange = (size) => {
+  //   this.setState({ size });
+  // }
 };
 
 
