@@ -7,7 +7,7 @@ const MIN_SPEED = 15;
 
 
 const SliderWrapper = styled.div`
-  box-sizing; border-box;
+  box-sizing: border-box;
   position: relative;
   width: 30vw;
   padding: 0px 30px;
@@ -35,34 +35,13 @@ const SliderWrapper = styled.div`
 const formatter = value => {
   return `${value}s`;
 }
-class SpeedSlider extends React.Component {
-  constructor(props) { 
-    super(props);
-    this.state = {
-      value: MIN_SPEED,
-    }
-  };
 
-  handleChange = (value) => {
-    this.setState({ value });
-  }
-  
-  render() {
-    const { max, min } = this.props;
-    const { value } = this.state;
-    const mid = ((max - min) / 2).toFixed(5);
-    const preColor = value >= mid ? '' : 'rgba(0, 0, 0, .45)';
-    const nextColor = value >= mid ? 'rgba(0, 0, 0, .45)' : '';
-    return (
-      <SliderWrapper>
-        <Icon style={{ color: preColor }} type="frown-o" />
-        <Slider {...this.props} onChange={this.handleChange} min={min || MIN_SPEED} max={max || MAX_SPEED} tipFormatter={formatter} value={value} />
-        <Icon style={{ color: nextColor }} type="smile-o" />
-      </SliderWrapper>
-    );
-  }
-}
-
-// ReactDOM.render(<SpeedSlider min={0} max={20} />, mountNode);
+const SpeedSlider = ({ max, min, handleSpeedChange }) => (
+<SliderWrapper>
+  <Icon type="frown-o" />
+  <Slider onChange={handleSpeedChange} min={min || MIN_SPEED} max={max || MAX_SPEED} tipFormatter={formatter} />
+  <Icon type="smile-o" />
+</SliderWrapper>
+);
 
 export default SpeedSlider;

@@ -87,33 +87,54 @@ const BottomImage = styled.img`
 
 const SliderContainer = styled.div`
   position: relative;
-
   `;
-
 
 class BodyContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       backgroundColor: charcoal,
-      // speed: 90s,
+      speed: 40,
     }
+    // this.state = {
+    //   imageID: "",
+    //   speed: "",
+    //   direction: "",
+    //   opacity: "",
+    //   size: "",
+    // }
   }
-
+  
   render() {
+    const speedInSeconds = `${this.state.speed}s`;
     return (
-    <BodyContainer>
+      <BodyContainer>
       <SmokeBackground backgroundColor={this.state.backgroundColor}>
         <BackImage src={smoke} alt="Smoke" />
         <MiddleImage src={smoke} alt="Smoke" />
         <FrontImage src={smoke} alt="Smoke" />
-        <BottomImage src={smoke} alt="Smoke" speed="90s" />
+        <BottomImage src={smoke} alt="Smoke" speed={speedInSeconds} />
       </SmokeBackground>
       <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/>
-      <ImageControls />
-        {/* <Button name="Mint" color='#1EBC93' /> */}
+      <ImageControls handleSpeedChange={this.handleSpeedChange}/>
     </BodyContainer>
   )}
+
+  handleSpeedChange = (speed) => {
+    this.setState({ speed });
+  }
+
+  handleOpacityChange = (opacity) => {
+    this.setState({ opacity });
+  }
+
+  handleDirectionChange = (direction) => {
+    this.setState({ direction });
+  }
+
+  handleSizeChange = (size) => {
+    this.setState({ size });
+  }
 };
 
 

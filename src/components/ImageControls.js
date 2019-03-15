@@ -39,44 +39,21 @@ class DirectionButtons extends React.Component {
   }
 };
 
-class ImageControls extends React.Component {
-  constructor(props) { 
-    super(props);
-    this.state = {
-      imageID: "",
-      speed: "",
-      direction: "",
-      opacity: "",
-      size: "",
-    }
-  };
-  handleSpeedChange = (speed) => {
-    this.setState({ speed });
-  }
-  handleOpacityChange = (opacity) => {
-    this.setState({ opacity });
-  }
-  handleDirectionChange = (direction) => {
-    this.setState({ direction });
-  }
-  handleSizeChange = (size) => {
-    this.setState({ size });
-  }
-  
+const ImageControls = (props) => {
+  // const {
+  //   handleSpeedChange,
+  //   handleOpacityChange,
+  //   handleDirectionChange
+  // } = props;
 
-
-  render() {
-    const {  } = this.props;
-
-    return (
-      <ControlsContainer>
-        <SpeedSlider />
-        <OpacitySlider />
-        <DirectionButtons />
-      </ControlsContainer>
-    );
-  }
-}
+  return (
+    <ControlsContainer>
+      <SpeedSlider {...props}/>
+      <OpacitySlider />
+      <DirectionButtons />
+    </ControlsContainer>
+  );
+};
 
 // ReactDOM.render(<ImageControls min={0} max={20} />, mountNode);
 
