@@ -45,16 +45,19 @@ const ControlsContainer = styled.div`
 
 
 
-const ControlPanel = (...props) => {
+const ControlPanel = (props) => {
+
 
   // name, max, min, handleChange, defaultValue, formatter, firstIcon, secondIcon
+  // setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}
 
   return (
     <ControlsContainer>
-      <ButtonList />
-      <ImageControl >
-        <SliderInput />
-    </ImageControl>
+      <ButtonList {...props} controlsFor="background" />
+      <ImageControls {...props} controlsFor="lower" />
+      <ImageControls {...props} controlsFor="back" />
+      <ImageControls {...props} controlsFor="middle" />
+      <ImageControls {...props} controlsFor="front" />
     </ControlsContainer>
   );
 };

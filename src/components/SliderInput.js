@@ -63,9 +63,9 @@ const SliderInput = (props) => {
     <Tray>
       <SliderName>{name}</SliderName>
       <SliderBox>
-        {/* <Icon type={firstIcon} /> */}
+        <Icon type={firstIcon} />
         <Slider onChange={handleSpeedChange} min={min || MIN_SPEED} max={max || MAX_SPEED} tipFormatter={formatter} />
-        {/* <Icon type={secondIcon} /> */}
+        <Icon type={secondIcon} />
       </SliderBox>
     </Tray>
   )

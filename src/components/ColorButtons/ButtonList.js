@@ -18,12 +18,18 @@ const ButtonContainer = styled.span`
 
 
 
-const ButtonList = ({ setBackgroundColor }) => {
+const ButtonList = ({ handleChange, controlsFor }) => {
+  const setColor = (hexValue) => {
+    console.log(hexValue);
+    return (
+      handleChange(controlsFor, "color", hexValue
+    )
+  )};
 
   return (
     <ButtonContainer> {
     _.toPairs(colors).map( ([colorName, hexValue]) => (
-        <Button setBackgroundColor={setBackgroundColor} key={hexValue} name={colorName} hexValue={hexValue} />
+        <Button setBackgroundColor={setColor} key={hexValue} name={colorName} hexValue={hexValue} />
     ))
   }</ButtonContainer>
 )}

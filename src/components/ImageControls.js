@@ -22,7 +22,8 @@ const sizeFormatter = value => {
   return `${value}px`;
 };
 
-//     handleChange,
+// const speedProps = {
+//     handleSpeedChange,
 //     name,
 //     max,
 //     min,
@@ -30,6 +31,7 @@ const sizeFormatter = value => {
 //     formatter,
 //     firstIcon,
 //     secondIcon
+// }
 
 // const defaultProps = {
 //   speed: {
@@ -96,8 +98,7 @@ class DirectionButtons extends React.Component {
 };
 
 const ImageControls = (props) => {
-
-
+  
   return (
     <ControlsContainer>
       <SliderInput {...props} />

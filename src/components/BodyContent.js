@@ -133,20 +133,23 @@ class BodyContent extends Component {
     const speedInSeconds = `${this.state.speed}s`;
     return (
       <BodyContainer>
-      <SmokeBackground backgroundColor={this.state.backgroundColor}>
+      <SmokeBackground backgroundColor={this.state.background.color}>
         <BackImage src={smoke} alt="Smoke" />
         <MiddleImage src={smoke} alt="Smoke" />
         <FrontImage src={smoke} alt="Smoke" />
         <LowerImage src={smoke} alt="Smoke" speed={speedInSeconds} />
       </SmokeBackground>
-      <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/>
-      <ImageControls handleSpeedChange={this.handleSpeedChange} />
+      {/* <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/> */}
+      <ControlPanel handleChange={this.handleChange} />
     </BodyContainer>
   )}
 
 
   handleChange = (imageName, property, value) => {
+    console.log("Before: ", this.state);
+    console.log({ [imageName]:{[property]: value }})
     this.setState({ [imageName]:{[property]: value }});
+    console.log("After: ", this.state);
   }
   // handleSpeedChange = (speed) => {
   //   this.setState({ speed });
