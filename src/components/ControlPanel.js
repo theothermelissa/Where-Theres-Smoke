@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import SliderInput from './SliderInput';
 import ImageControls from './ImageControls';
 import ButtonList from './ColorButtons/ButtonList';
 
@@ -46,18 +45,18 @@ const ControlsContainer = styled.div`
 
 
 const ControlPanel = (props) => {
-
+  console.log(props)
 
   // name, max, min, handleChange, defaultValue, formatter, firstIcon, secondIcon
   // setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}
 
   return (
     <ControlsContainer>
-      <ButtonList {...props} controlsFor="background" />
-      <ImageControls {...props} controlsFor="lower" />
-      <ImageControls {...props} controlsFor="back" />
-      <ImageControls {...props} controlsFor="middle" />
-      <ImageControls {...props} controlsFor="front" />
+      {/* <ButtonList {...props} layerName="background" /> */}
+      <ImageControls {...props} layerName="lower" />
+      <ImageControls {...props} layerName="back" />
+      <ImageControls {...props} layerName="middle" />
+      <ImageControls {...props} layerName="front" />
     </ControlsContainer>
   );
 };

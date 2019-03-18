@@ -18,12 +18,11 @@ const ButtonContainer = styled.span`
 
 
 
-const ButtonList = ({ handleChange, controlsFor }) => {
+const ButtonList = ({ handleChange, layerName }) => {
   const setColor = (hexValue) => {
     console.log(hexValue);
     return (
-      handleChange(controlsFor, "color", hexValue
-    )
+      handleChange(layerName, "color", hexValue)
   )};
 
   return (

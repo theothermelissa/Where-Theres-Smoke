@@ -2,6 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import SliderInput from './SliderInput';
 import { Radio } from 'antd';
+import { charcoal } from './colors';
 
 
 const MAX_SPEED = 300;
@@ -22,87 +23,65 @@ const sizeFormatter = value => {
   return `${value}px`;
 };
 
-// const speedProps = {
-//     handleSpeedChange,
-//     name,
-//     max,
-//     min,
-//     defaultValue,
-//     formatter,
-//     firstIcon,
-//     secondIcon
-// }
-
-// const defaultProps = {
-//   speed: {
-//     name: "Speed",
-//     max: MAX_SPEED,
-//     min: MIN_SPEED,
-//     defaultValue: 150,
-//     formatter: speedFormatter,
-//     firstIcon: "caret-up",
-//     secondIcon: "caret-down",
-//   },
-//   opacity: {
-//     name: "Opacity",
-//     max: MAX_SPEED,
-//     min: MIN_SPEED,
-//     defaultValue: 150,
-//     formatter: opacityFormatter,
-//     firstIcon: "caret-down",
-//     secondIcon: "caret-up",
-//   },
-//   size: {
-//     name: "Size",
-//     max: MAX_SIZE,
-//     min: MIN_SIZE,
-//     defaultValue: 1000,
-//     formatter: sizeFormatter,
-//     firstIcon: "caret-down",
-//     secondIcon: "caret-up",
-//   }
-// }
-
-const RadioGroup = Radio.Group;
-
 const ControlsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 200px;
   width: 100%;
   align-items: center;
   justify-content: center;
+  border: 1px solid ${charcoal};
+  margin: 3px;
   `;
+
+const ControlsTitle = styled.h2`
+  color: ${charcoal};
+  `;
+
+const RadioGroup = Radio.Group;
+
+
 
 
 class DirectionButtons extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {
-      direction: 'Left',
-    }
-  }
-  onChange = (dir) => {
-    // console.log("changed");
-    this.setState({
-      direction: dir.target.value,
-    });
   }
   render() {
+    const { setDirection, direction } = this.props;
     return (
-      <RadioGroup onChange={this.onChange} value={this.state.direction}>
-        <Radio value={"Left"}>Left</Radio>
-        <Radio value={"Right"}>Right</Radio>
+      <RadioGroup onChange={(event) => setDirection(event.target.value)} value={direction}>
+        <Radio value={"left"}>Left</Radio>
+        <Radio value={"right"}>Right</Radio>
       </RadioGroup>
     );
   }
 };
 
+
 const ImageControls = (props) => {
+  // console.log("Props passed to ImageControls: ", props);
+  const { handleChange, layerName } = props;
+  const layerSettings = props[layerName];
+  // console.log("This Layer's Settings: ", layerSettings)
+  const setDirection = (directionValue) => {
+    // console.log("DirectionValue: ", directionValue);
+    return (
+      handleChange(layerName, "direction", directionValue)
+    )
+  }
+  const setSpeed = (speedValue) => {
+    // console.log(speedValue);
+    return (
+      handleChange(layerName, "speed", speedValue)
+  )};
+  // {() => setBackgroundColor(hexValue)}
   
   return (
-    <ControlsContainer>
+    <ControlsContainer >
+      <ControlsTitle >{layerName}</ControlsTitle>
+      <DirectionButtons direction={layerSettings.direction} setDirection={setDirection} />
       <SliderInput {...props} />
-      <DirectionButtons />
     </ControlsContainer>
   );
 };
