@@ -21,10 +21,12 @@ export const spin = (direction) => {
   switch (direction) {
     case "right":
       result = spinRight;
+      break;
     case "left":
       result = spinLeft;
-    default:
-      result = spinLeft;
+      break;
+    // default:
+    //   result = spinRight;
   }
   return result;
 };

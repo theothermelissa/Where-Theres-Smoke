@@ -1,11 +1,11 @@
 import React from "react";
 import styled from 'styled-components';
 import { Radio } from 'antd';
-import { charcoal } from './colors';
+// import { charcoal } from './colors';
 
 const RadioGroup = Radio.Group;
 
-class DirectionButtons extends React.Component {
+export default class DirectionButtons extends React.Component {
   constructor(props) {
     super(props);
   }

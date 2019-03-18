@@ -18,7 +18,6 @@ const sizeInPixels = (size) => {
   return `${size}px`
 };
 
-
 const BodyContainer = styled.div`
   margin: -5vw;
   left: 0;
@@ -82,11 +81,6 @@ const SmokeBackground = styled.div`
 //   animation-iteration-count: infinite;
 //   `;
 
-// const TimesTwo = value => value*2;
-// background: ${props => props.backgroundColor};
-
-
-
 const LowerImage = styled.img`
   /* name: ${props => props.name}; */
   position: absolute;  
@@ -98,7 +92,6 @@ const LowerImage = styled.img`
   height: ${props => sizeInPixels(props.lower.size)};
   animation: ${props => spin(props.lower.direction)} ${ props => speedInSeconds(props.lower.speed) } ease-in-out infinite;
   `;
-
 
 class BodyContent extends Component {
   constructor(props) {
@@ -112,7 +105,7 @@ class BodyContent extends Component {
         leftPosition: -350,
         topPosition: 200,
         speed: 100,
-        direction: "right",
+        direction: "left",
         opacity: .9,
         size: 2200,
       },
@@ -155,7 +148,6 @@ class BodyContent extends Component {
     </BodyContainer>
   )}
 
-
   handleChange = (imageName, property, value) => {
     console.log("Before: ", this.state);
     // console.log({ [imageName]:{[property]: value }})
@@ -163,11 +155,6 @@ class BodyContent extends Component {
     console.log("After: ", this.state);
   }
 };
-
-
-const SliderContainer = styled.div`
-  position: relative;
-  `;
 
 
 export default BodyContent;
