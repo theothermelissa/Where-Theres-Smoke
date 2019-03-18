@@ -82,16 +82,20 @@ const SmokeBackground = styled.div`
 //   animation-iteration-count: infinite;
 //   `;
 
-const LowerImage = styled.img`
-  /* name: ${props => props.name}; */
+const Image = styled.img`
+  name: ${props => props.imageName};
   position: absolute;  
-  left: ${props => sizeInPixels(props.lower.leftPosition)};
-  top: ${props => sizeInPixels(props.lower.topPosition)};
-  opacity: ${props => props.lower.opacity};
+  left: ${props => sizeInPixels(props.leftPosition)};
+  top: ${props => sizeInPixels(props.topPosition)};
+  opacity: ${props => props.opacity};
   width: auto;
   margin: 0px;
-  height: ${props => sizeInPixels(props.lower.size)};
-  animation: ${props => spin(props.lower.direction)} ${ props => speedInSeconds(props.lower.speed) } ease-in-out infinite;
+  height: ${props => sizeInPixels(props.size)};
+  animation: 
+    ${props => spin(props.direction)} 
+    ${ props => speedInSeconds(props.speed) } 
+    ease-in-out 
+    infinite;
   `;
 
 class BodyContent extends Component {
@@ -102,7 +106,7 @@ class BodyContent extends Component {
         color: charcoal,
       },
       lower: {  
-        // imageID: "",
+        imageName: "lower",
         leftPosition: -350,
         topPosition: 200,
         speed: 100,
@@ -111,23 +115,29 @@ class BodyContent extends Component {
         size: 2200,
       },
       back: {  
-        // imageID: "",
+        imageName: "back",
         speed: 150,
+        leftPosition: -600,
+        topPosition: -500,
         direction: "left",
         size: 2400,
         opacity: .5,
       },
       middle: {  
-        // imageID: "",
+        imageName: "middle",
         speed: 150,
+        leftPosition: -300,
+        topPosition: -20,
         direction: "left",
         size: 1400,
         opacity: .5,
       },
       front: {  
-        // imageID: "",
+        imageName: "front",
         speed: 150,
         direction: "left",
+        leftPosition: 250,
+        topPosition: -160,
         opacity: .5,
         size: 1700,
       },
@@ -138,60 +148,31 @@ class BodyContent extends Component {
     return (
       <BodyContainer>
       <SmokeBackground backgroundColor={this.state.background.color}>
-        {/* <BackImage src={smoke} alt="Smoke" />
-        <MiddleImage src={smoke} alt="Smoke" />
-        <FrontImage src={smoke} alt="Smoke" /> */}
-        <LowerImage {...this.state} src={smoke} alt="Smoke" />
+        <Image {...this.state.back} src={smoke} alt="Smoke" />
+        <Image {...this.state.middle} src={smoke} alt="Smoke" />
+        <Image {...this.state.front} src={smoke} alt="Smoke" />
+        <Image {...this.state.lower} src={smoke} alt="Smoke" />
       </SmokeBackground>
       <ControlPanel {...this.state} handleChange={this.handleChange} />
     </BodyContainer>
   )}
 
   handleChange = (imageName, property, value) => {
-    // const currentState = this.state;
-    console.log("imageName: ", imageName);
-    console.log("property: ", property);
-    console.log("value: ", value);
-    let imageToChange = {...this.state[imageName]};
-    console.log("imageToChange: ", imageToChange);
-    imageToChange[property] = value;
-    console.log("Property to Change: ", imageToChange[property]);
+    // console.log("imageName: ", imageName);
+    // console.log("property: ", property);
+    // console.log("value: ", value);
     console.log("Change It To: ", value);
-    this.setState(imageToChange);
-    console.log( "current state: ", this.state);
-  
-    this.setState(currentState => ({
-      ...currentState,
+    this.setState(previousState => ({
+      ...previousState,
       [imageName]: {
-        ...currentState[imageName],
-          [property]: [value],
+        ...previousState[imageName],
+          [property]: value,
       }
-    }))
-
-  //   this.setState(prevState => ({
-  //     ...prevState,
-  //     someProperty: {
-  //         ...prevState.someProperty,
-  //         someOtherProperty: {
-  //             ...prevState.someProperty.someOtherProperty, 
-  //             anotherProperty: {
-  //                ...prevState.someProperty.someOtherProperty.anotherProperty,
-  //                flag: false
-  //             }
-  //         }
-  //     }
-  // }))
-  
-  
-  
+    })
+    )
+    console.log( "current state: ", this.state);  
   }
 };
-
-
-
-// var someProperty = {...this.state.someProperty}
-// someProperty.flag = true;
-// this.setState({someProperty})
 
 
 export default BodyContent;
