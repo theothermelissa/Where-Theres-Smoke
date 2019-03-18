@@ -6,12 +6,12 @@ export const Medium = "150s";
 export const Fast = "90s";
 export const Extrafast = "30s";
 
-const spinRight = keyframes`
+export const spinRight = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 `;
 
-const spinLeft = keyframes`
+export const spinLeft = keyframes`
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
 `;

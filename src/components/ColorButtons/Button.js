@@ -13,7 +13,7 @@ const ColorButton = styled.button`
   margin: 5px;
   min-width: 200px;
   padding: 10px;
-  border: 0px;
+  border: 3px solid white;
   border-radius: 15px;
   background-color: ${ ({color}) => color };
   `;

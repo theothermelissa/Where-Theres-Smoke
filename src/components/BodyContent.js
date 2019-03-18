@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import smoke from "../images/smoke.png";
-import { spin, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
+import { spin, spinLeft, spinRight, Extraslow, Slow, Medium, Fast, Extrafast } from "./Spins";
 import ButtonList from "./ColorButtons/ButtonList";
 import colors from "./colorsForButtons";
 import ControlPanel from './ControlPanel';
@@ -28,7 +28,7 @@ const BodyContainer = styled.div`
   width: 110%;
   height: 110%;
   align-items: center;
-  background-color: ${cream};
+  background-color: whitesmoke;
   `;
 
 const SmokeBackground = styled.div`
@@ -96,10 +96,7 @@ const LowerImage = styled.img`
   width: auto;
   margin: 0px;
   height: ${props => sizeInPixels(props.lower.size)};
-  animation-direction: ${({ direction }) => spin(direction)};
-  animation-duration: ${ ({ speed }) => speed };
-  animation-timing-function: ease-in-out; 
-  animation-iteration-count: infinite;
+  animation: ${spinLeft} ${ props => speedInSeconds(props.lower.speed) } ease-in-out infinite;
   `;
 
 
@@ -114,7 +111,7 @@ class BodyContent extends Component {
         // imageID: "",
         leftPosition: -350,
         topPosition: 200,
-        speed: 15,
+        speed: 100,
         direction: "left",
         opacity: .9,
         size: 2200,
@@ -156,7 +153,7 @@ class BodyContent extends Component {
         <FrontImage src={smoke} alt="Smoke" /> */}
         <LowerImage {...this.state} src={smoke} alt="Smoke" />
       </SmokeBackground>
-      <ButtonList handleChange={this.handleChange}/>
+      {/* <ButtonList handleChange={this.handleChange}/> */}
       {/* <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/> */}
       <ControlPanel {...this.state} handleChange={this.handleChange} />
     </BodyContainer>
