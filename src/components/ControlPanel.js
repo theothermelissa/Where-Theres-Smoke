@@ -45,7 +45,7 @@ const ControlsContainer = styled.div`
 
 
 const ControlPanel = (props) => {
-  console.log(props)
+  // console.log(props)
 
   // name, max, min, handleChange, defaultValue, formatter, firstIcon, secondIcon
   // setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}

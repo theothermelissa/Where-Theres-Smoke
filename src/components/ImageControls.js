@@ -39,52 +39,15 @@ const ControlsTitle = styled.h2`
   color: ${charcoal};
   `;
 
-// const RadioGroup = Radio.Group;
-
-
-
-
-// class DirectionButtons extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     const { setDirection, direction } = this.props;
-//     return (
-//       <RadioGroup onChange={(event) => setDirection(event.target.value)} value={direction}>
-//         <Radio value={"left"}>Left</Radio>
-//         <Radio value={"right"}>Right</Radio>
-//       </RadioGroup>
-//     );
-//   }
-// };
-
-
 const ImageControls = (props) => {
   // console.log("Props passed to ImageControls: ", props);
   const { handleChange, layerName } = props;
   const layerSettings = props[layerName];
 
-  // console.log("This Layer's Settings: ", layerSettings);
-
-  const setDirection = (directionValue) => {
-    // console.log("DirectionValue: ", directionValue);
-    return (
-      handleChange(layerName, "direction", directionValue)
-    )
-  }
-
-  // const setSpeed = (speedValue) => {
-  //   // console.log(speedValue);
-  //   return (
-  //     handleChange(layerName, "speed", speedValue)
-  // )};
-  // // {() => setBackgroundColor(hexValue)}
-  
   return (
     <ControlsContainer >
       <ControlsTitle >{layerName}</ControlsTitle>
-      <DirectionButtons direction={layerSettings.direction} setDirection={setDirection} />
+      <DirectionButtons name={layerName} direction={layerSettings.direction} setDirection={(directionValue) => handleChange(layerName, "direction", directionValue)} />
       <SliderInput {...props} />
     </ControlsContainer>
   );

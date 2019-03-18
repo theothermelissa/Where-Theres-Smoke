@@ -6,6 +6,7 @@ import ButtonList from "./ColorButtons/ButtonList";
 import colors from "./colorsForButtons";
 import ControlPanel from './ControlPanel';
 import ImageControls from './ImageControls';
+// import { assign } from "lodash";
 
 const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
 
@@ -14,7 +15,7 @@ const speedInSeconds = (speed) => {
   return `${speed}s`
 };
 const sizeInPixels = (size) => {
-  console.log("Height in pixels: ", `${size}px`);
+  console.log("Size in pixels: ", `${size}px`);
   return `${size}px`
 };
 
@@ -142,17 +143,23 @@ class BodyContent extends Component {
         <FrontImage src={smoke} alt="Smoke" /> */}
         <LowerImage {...this.state} src={smoke} alt="Smoke" />
       </SmokeBackground>
-      {/* <ButtonList handleChange={this.handleChange}/> */}
-      {/* <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/> */}
       <ControlPanel {...this.state} handleChange={this.handleChange} />
     </BodyContainer>
   )}
 
   handleChange = (imageName, property, value) => {
-    console.log("Before: ", this.state);
-    // console.log({ [imageName]:{[property]: value }})
-    this.setState({ [imageName]:{[property]: value }});
-    console.log("After: ", this.state);
+    const currentState = this.state;
+    
+    console.log( "current state: ", this.state);
+    this.setState({
+      ...{
+        [imageName]:{
+          ...{
+            [property]: value
+          }
+        }
+      }
+    });
   }
 };
 

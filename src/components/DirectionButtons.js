@@ -8,11 +8,14 @@ const RadioGroup = Radio.Group;
 export default class DirectionButtons extends React.Component {
   constructor(props) {
     super(props);
+    // console.log("Props passed to DirectionButtons: ", props)
+    // console.log();
+
   }
   render() {
-    const { setDirection, direction } = this.props;
+    const { name, setDirection, direction } = this.props;
     return (
-      <RadioGroup onChange={(event) => setDirection(event.target.value)} value={direction}>
+      <RadioGroup name={name} onChange={(event) => setDirection(event.target.value)} value={direction}>
         <Radio value={"left"}>Left</Radio>
         <Radio value={"right"}>Right</Radio>
       </RadioGroup>
