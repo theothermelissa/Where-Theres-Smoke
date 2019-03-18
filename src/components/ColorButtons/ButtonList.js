@@ -22,7 +22,7 @@ const ButtonList = ({ handleChange, layerName }) => {
   const setColor = (hexValue) => {
     console.log(hexValue);
     return (
-      handleChange(layerName, "color", hexValue)
+      handleChange("background", "color", hexValue)
   )};
 
   return (

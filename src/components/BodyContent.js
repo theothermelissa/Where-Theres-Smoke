@@ -88,7 +88,7 @@ const SmokeBackground = styled.div`
 
 
 const LowerImage = styled.img`
-  name: ${props => props.name};
+  /* name: ${props => props.name}; */
   position: absolute;  
   left: ${props => sizeInPixels(props.lower.leftPosition)};
   top: ${props => sizeInPixels(props.lower.topPosition)};
@@ -96,12 +96,10 @@ const LowerImage = styled.img`
   width: auto;
   margin: 0px;
   height: ${props => sizeInPixels(props.lower.size)};
-
-  
-  /* animation-direction: ${({ direction }) => spin(direction)};
+  animation-direction: ${({ direction }) => spin(direction)};
   animation-duration: ${ ({ speed }) => speed };
   animation-timing-function: ease-in-out; 
-  animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   `;
 
 
@@ -156,10 +154,10 @@ class BodyContent extends Component {
         {/* <BackImage src={smoke} alt="Smoke" />
         <MiddleImage src={smoke} alt="Smoke" />
         <FrontImage src={smoke} alt="Smoke" /> */}
-        <LowerImage {...this.state} name="lower" src={smoke} alt="Smoke" />
-        {/* <LowerImage src={smoke} alt="Smoke" size={sizeInPixels(this.state.lower.size)} speed={speedInSeconds(this.state.lower.speed)} /> */}
+        <LowerImage {...this.state} src={smoke} alt="Smoke" />
       </SmokeBackground>
-      <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/>
+      <ButtonList handleChange={this.handleChange}/>
+      {/* <ButtonList setBackgroundColor={(backgroundColor) => this.setState({backgroundColor})}/> */}
       <ControlPanel {...this.state} handleChange={this.handleChange} />
     </BodyContainer>
   )}
@@ -167,7 +165,7 @@ class BodyContent extends Component {
 
   handleChange = (imageName, property, value) => {
     console.log("Before: ", this.state);
-    console.log({ [imageName]:{[property]: value }})
+    // console.log({ [imageName]:{[property]: value }})
     this.setState({ [imageName]:{[property]: value }});
     console.log("After: ", this.state);
   }

@@ -52,7 +52,7 @@ const ControlPanel = (props) => {
 
   return (
     <ControlsContainer>
-      {/* <ButtonList {...props} layerName="background" /> */}
+      <ButtonList {...props} layerName="background" />
       <ImageControls {...props} layerName="lower" />
       <ImageControls {...props} layerName="back" />
       <ImageControls {...props} layerName="middle" />
