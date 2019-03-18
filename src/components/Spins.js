@@ -17,12 +17,14 @@ export const spinLeft = keyframes`
 `;
 
 export const spin = (direction) => {
+  let result;
   switch (direction) {
     case "right":
-      spinRight;
+      result = spinRight;
     case "left":
-      spinLeft;
+      result = spinLeft;
     default:
-      spinLeft;
+      result = spinLeft;
   }
+  return result;
 };

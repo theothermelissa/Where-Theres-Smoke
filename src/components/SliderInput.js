@@ -2,13 +2,6 @@ import React from "react";
 import { Slider, Icon } from 'antd';
 import styled from 'styled-components';
 
-const MAX_SPEED = 300;
-const MIN_SPEED = 15;
-const MIN_SIZE = 500;
-const MAX_SIZE = 2500;
-const MIN_OPACITY = 0;
-const MAX_OPACITY = 100;
-
 const Tray = styled.div`
   box-sizing: border-box;
   display: flex;
@@ -49,8 +42,8 @@ const SliderBox = styled.div`
 
 const SliderInput = (props) => {
   const { 
-    handleSpeedChange,
-    name,
+    handleChange,
+    layerName,
     max,
     min,
     defaultValue,
@@ -59,12 +52,19 @@ const SliderInput = (props) => {
     secondIcon 
   } = props;
 
+  const changeSetting = (imageName, property, value) => {
+    console.log("Change value to: ", value);
+    return (
+      handleChange(imageName, property, value)
+    )
+  };
+
   return (
     <Tray>
       <SliderName>{name}</SliderName>
       <SliderBox>
         <Icon type={firstIcon} />
-        <Slider onChange={handleSpeedChange} min={min || MIN_SPEED} max={max || MAX_SPEED} tipFormatter={formatter} />
+        <Slider onChange={changeSetting} min={min} max={max} tipFormatter={formatter} />
         <Icon type={secondIcon} />
       </SliderBox>
     </Tray>
@@ -72,3 +72,18 @@ const SliderInput = (props) => {
 };
 
 export default SliderInput;
+
+// const ButtonList = ({ handleChange, layerName }) => {
+//   const setColor = (hexValue) => {
+//     console.log(hexValue);
+//     return (
+//       handleChange("background", "color", hexValue)
+//   )};
+
+//   return (
+//     <ButtonContainer> {
+//     _.toPairs(colors).map( ([colorName, hexValue]) => (
+//         <Button setBackgroundColor={setColor} key={hexValue} name={colorName} hexValue={hexValue} />
+//     ))
+//   }</ButtonContainer>
+// )}

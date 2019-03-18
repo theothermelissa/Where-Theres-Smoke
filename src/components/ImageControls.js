@@ -60,22 +60,25 @@ class DirectionButtons extends React.Component {
 
 
 const ImageControls = (props) => {
-  // console.log("Props passed to ImageControls: ", props);
+  console.log("Props passed to ImageControls: ", props);
   const { handleChange, layerName } = props;
   const layerSettings = props[layerName];
-  // console.log("This Layer's Settings: ", layerSettings)
+
+  console.log("This Layer's Settings: ", layerSettings);
+
   const setDirection = (directionValue) => {
-    // console.log("DirectionValue: ", directionValue);
+    console.log("DirectionValue: ", directionValue);
     return (
       handleChange(layerName, "direction", directionValue)
     )
   }
-  const setSpeed = (speedValue) => {
-    // console.log(speedValue);
-    return (
-      handleChange(layerName, "speed", speedValue)
-  )};
-  // {() => setBackgroundColor(hexValue)}
+
+  // const setSpeed = (speedValue) => {
+  //   // console.log(speedValue);
+  //   return (
+  //     handleChange(layerName, "speed", speedValue)
+  // )};
+  // // {() => setBackgroundColor(hexValue)}
   
   return (
     <ControlsContainer >

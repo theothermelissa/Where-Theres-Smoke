@@ -4,8 +4,6 @@ import Button from './Button';
 import colors from "../colorsForButtons";
 import _ from "lodash";
 
-// const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
-
 const ButtonContainer = styled.span`
   display: flex;
   flex-flow: row wrap;
@@ -14,9 +12,6 @@ const ButtonContainer = styled.span`
   align-items: center;
   justify-content: center;
   `;
-
-
-
 
 const ButtonList = ({ handleChange, layerName }) => {
   const setColor = (hexValue) => {
@@ -31,13 +26,7 @@ const ButtonList = ({ handleChange, layerName }) => {
         <Button setBackgroundColor={setColor} key={hexValue} name={colorName} hexValue={hexValue} />
     ))
   }</ButtonContainer>
-)}
-// setBackgroundColor(hexValue)
-  
-  
-  // <ButtonHolder>
-  //   <Button />
-  // </ButtonHolder>
+)};
 
 
 export default ButtonList;

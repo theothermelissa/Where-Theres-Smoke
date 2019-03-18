@@ -96,7 +96,7 @@ const LowerImage = styled.img`
   width: auto;
   margin: 0px;
   height: ${props => sizeInPixels(props.lower.size)};
-  animation: ${spinLeft} ${ props => speedInSeconds(props.lower.speed) } ease-in-out infinite;
+  animation: ${props => spin(props.lower.direction)} ${ props => speedInSeconds(props.lower.speed) } ease-in-out infinite;
   `;
 
 
@@ -112,7 +112,7 @@ class BodyContent extends Component {
         leftPosition: -350,
         topPosition: 200,
         speed: 100,
-        direction: "left",
+        direction: "right",
         opacity: .9,
         size: 2200,
       },
@@ -139,10 +139,6 @@ class BodyContent extends Component {
       },
     }
   }
-
-  // const speedFormatter = value => {
-  //   return `${value}s`;
-  // };
 
   render() {
     return (
