@@ -148,20 +148,50 @@ class BodyContent extends Component {
   )}
 
   handleChange = (imageName, property, value) => {
-    const currentState = this.state;
-    
+    // const currentState = this.state;
+    console.log("imageName: ", imageName);
+    console.log("property: ", property);
+    console.log("value: ", value);
+    let imageToChange = {...this.state[imageName]};
+    console.log("imageToChange: ", imageToChange);
+    imageToChange[property] = value;
+    console.log("Property to Change: ", imageToChange[property]);
+    console.log("Change It To: ", value);
+    this.setState(imageToChange);
     console.log( "current state: ", this.state);
-    this.setState({
-      ...{
-        [imageName]:{
-          ...{
-            [property]: value
-          }
-        }
+  
+    this.setState(currentState => ({
+      ...currentState,
+      [imageName]: {
+        ...currentState[imageName],
+          [property]: [value],
       }
-    });
+    }))
+
+  //   this.setState(prevState => ({
+  //     ...prevState,
+  //     someProperty: {
+  //         ...prevState.someProperty,
+  //         someOtherProperty: {
+  //             ...prevState.someProperty.someOtherProperty, 
+  //             anotherProperty: {
+  //                ...prevState.someProperty.someOtherProperty.anotherProperty,
+  //                flag: false
+  //             }
+  //         }
+  //     }
+  // }))
+  
+  
+  
   }
 };
+
+
+
+// var someProperty = {...this.state.someProperty}
+// someProperty.flag = true;
+// this.setState({someProperty})
 
 
 export default BodyContent;

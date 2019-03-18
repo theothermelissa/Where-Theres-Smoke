@@ -43,7 +43,7 @@ const SliderBox = styled.div`
 const SliderInput = (props) => {
   const { 
     handleChange,
-    layerName,
+    imageName,
     max,
     min,
     defaultValue,
@@ -73,17 +73,3 @@ const SliderInput = (props) => {
 
 export default SliderInput;
 
-// const ButtonList = ({ handleChange, layerName }) => {
-//   const setColor = (hexValue) => {
-//     console.log(hexValue);
-//     return (
-//       handleChange("background", "color", hexValue)
-//   )};
-
-//   return (
-//     <ButtonContainer> {
-//     _.toPairs(colors).map( ([colorName, hexValue]) => (
-//         <Button setBackgroundColor={setColor} key={hexValue} name={colorName} hexValue={hexValue} />
-//     ))
-//   }</ButtonContainer>
-// )}

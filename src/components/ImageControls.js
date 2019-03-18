@@ -41,13 +41,13 @@ const ControlsTitle = styled.h2`
 
 const ImageControls = (props) => {
   // console.log("Props passed to ImageControls: ", props);
-  const { handleChange, layerName } = props;
-  const layerSettings = props[layerName];
+  const { handleChange, imageName } = props;
+  const layerSettings = props[imageName];
 
   return (
     <ControlsContainer >
-      <ControlsTitle >{layerName}</ControlsTitle>
-      <DirectionButtons name={layerName} direction={layerSettings.direction} setDirection={(directionValue) => handleChange(layerName, "direction", directionValue)} />
+      <ControlsTitle >{imageName}</ControlsTitle>
+      <DirectionButtons name={imageName} direction={layerSettings.direction} setDirection={(directionValue) => handleChange(imageName, "direction", directionValue)} />
       <SliderInput {...props} />
     </ControlsContainer>
   );

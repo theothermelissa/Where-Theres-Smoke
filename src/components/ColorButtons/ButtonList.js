@@ -13,11 +13,11 @@ const ButtonContainer = styled.span`
   justify-content: center;
   `;
 
-const ButtonList = ({ handleChange, layerName }) => {
+const ButtonList = ({ handleChange, imageName }) => {
   const setColor = (hexValue) => {
     console.log(hexValue);
     return (
-      handleChange(layerName, "color", hexValue)
+      handleChange(imageName, "color", hexValue)
   )};
 
   return (
