@@ -24,11 +24,11 @@ const sizeFormatter = value => {
   return `${value}px`;
 };
 
-const ControlsContainer = styled.div`
+const ImageControlsContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   min-height: 200px;
-  width: 25%;
+  width: 100%;
   align-items: start;
   justify-content: center;
   border: 1px solid ${charcoal};
@@ -56,7 +56,7 @@ const ImageControls = (props) => {
   const layerSettings = props[imageName];
 
   return (
-    <ControlsContainer >
+    <ImageControlsContainer >
       <ControlsTitle >{imageName}</ControlsTitle>
       <DirectionButtons 
         name={imageName} 
@@ -99,7 +99,7 @@ const ImageControls = (props) => {
         firstIcon="up"
         secondIcon="down"
          />
-    </ControlsContainer>
+    </ImageControlsContainer>
   );
 };
 

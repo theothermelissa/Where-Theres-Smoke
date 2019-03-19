@@ -9,8 +9,8 @@ const ButtonContainer = styled.span`
   flex-flow: row wrap;
   width: 60%;
   margin: 10px;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  /* justify-content: space-between; */
   `;
 
 const ButtonList = ({ handleChange, imageName }) => {

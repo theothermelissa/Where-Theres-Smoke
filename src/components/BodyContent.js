@@ -20,22 +20,23 @@ const sizeInPixels = (size) => {
 };
 
 const BodyContainer = styled.div`
-  margin: -5vw;
+  /* margin: -5vw; */
+  box-sizing: border-box;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: column;
-  /* width: 110%;
-  height: 110%; */
-  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* align-items: center; */
   background-color: gray;
   `;
 
 const SmokeBackground = styled.div`
   position: relative;
-  box-sizing: border-box;
-  height: 60vh;
-  width: 110vw;
+  /* box-sizing: border-box; */
+  height: 55vh;
+  width: 100vw;
   overflow: hidden;
   background: ${props => props.backgroundColor};
   `;
@@ -66,7 +67,7 @@ class BodyContent extends Component {
       lower: {  
         imageName: "lower",
         leftPosition: -350,
-        topPosition: 200,
+        topPosition: 100,
         speed: 80,
         direction: "left",
         opacity: .5,
