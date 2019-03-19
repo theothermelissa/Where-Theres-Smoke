@@ -39,6 +39,15 @@ const ControlsTitle = styled.h2`
   color: ${charcoal};
   `;
 
+// handleChange,
+// imageName,
+// max,
+// min,
+// defaultValue,
+// formatter,
+// firstIcon,
+// secondIcon 
+
 const ImageControls = (props) => {
   // console.log("Props passed to ImageControls: ", props);
   const { handleChange, imageName } = props;
@@ -47,8 +56,23 @@ const ImageControls = (props) => {
   return (
     <ControlsContainer >
       <ControlsTitle >{imageName}</ControlsTitle>
-      <DirectionButtons name={imageName} direction={layerSettings.direction} setDirection={(directionValue) => handleChange(imageName, "direction", directionValue)} />
-      <SliderInput {...props} />
+      <DirectionButtons 
+        name={imageName} 
+        direction={layerSettings.direction} 
+        setDirection={(directionValue) => 
+        handleChange(imageName, "direction", directionValue)} />
+      <SliderInput 
+        name={imageName} 
+        property="speed"
+        handleChange={handleChange}
+        max={MAX_SPEED}
+        min={MIN_SPEED}
+        defaultValue={layerSettings.speed}
+        value={layerSettings.speed}
+        formatter={speedFormatter}
+        firstIcon="up"
+        secondIcon="down"
+         />
     </ControlsContainer>
   );
 };

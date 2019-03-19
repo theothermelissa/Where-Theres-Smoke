@@ -17,7 +17,7 @@ const SliderBox = styled.div`
   /* display: flex; */
   /* flex-flow: row wrap; */
   position: relative;
-  width: 80vw;
+  width: 50vw;
   padding: 0px 30px;
   .anticon {
     position: absolute;
@@ -42,8 +42,9 @@ const SliderBox = styled.div`
 
 const SliderInput = (props) => {
   const { 
+    property,
     handleChange,
-    imageName,
+    name,
     max,
     min,
     defaultValue,
@@ -52,19 +53,25 @@ const SliderInput = (props) => {
     secondIcon 
   } = props;
 
-  const changeSetting = (imageName, property, value) => {
-    console.log("Change value to: ", value);
+  const changeSetting = (value) => {
+    // console.log("Change value to: ", value);
     return (
-      handleChange(imageName, property, value)
+      handleChange(name, property, value)
+      // handleChange(imageName, property, value)
     )
   };
 
   return (
     <Tray>
-      <SliderName>{name}</SliderName>
+      <SliderName>{property}</SliderName>
       <SliderBox>
         <Icon type={firstIcon} />
-        <Slider onChange={changeSetting} min={min} max={max} tipFormatter={formatter} />
+        <Slider 
+          onChange={changeSetting}
+          defaultValue={defaultValue}
+          min={min}
+          max={max}
+          tipFormatter={formatter} />
         <Icon type={secondIcon} />
       </SliderBox>
     </Tray>

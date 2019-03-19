@@ -15,7 +15,7 @@ const speedInSeconds = (speed) => {
   return `${speed}s`
 };
 const sizeInPixels = (size) => {
-  console.log("Size in pixels: ", `${size}px`);
+  // console.log("Size in pixels: ", `${size}px`);
   return `${size}px`
 };
 
@@ -28,7 +28,7 @@ const BodyContainer = styled.div`
   width: 110%;
   height: 110%;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: gray;
   `;
 
 const SmokeBackground = styled.div`
@@ -109,7 +109,7 @@ class BodyContent extends Component {
         imageName: "lower",
         leftPosition: -350,
         topPosition: 200,
-        speed: 100,
+        speed: 80,
         direction: "left",
         opacity: .9,
         size: 2200,
@@ -161,7 +161,7 @@ class BodyContent extends Component {
     // console.log("imageName: ", imageName);
     // console.log("property: ", property);
     // console.log("value: ", value);
-    console.log("Change It To: ", value);
+    // console.log("Change It To: ", value);
     this.setState(previousState => ({
       ...previousState,
       [imageName]: {
