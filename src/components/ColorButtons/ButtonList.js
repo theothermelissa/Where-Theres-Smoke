@@ -7,10 +7,10 @@ import _ from "lodash";
 const ButtonContainer = styled.span`
   display: flex;
   flex-flow: row wrap;
-  width: 80%;
-  margin: 30px;
+  width: 60%;
+  margin: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   `;
 
 const ButtonList = ({ handleChange, imageName }) => {

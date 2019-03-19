@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 const ColorName = styled.h2`
   color: white;
-  font-size: 1.5em;
+  font-size: .9em;
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
   `;
 
 const ColorButton = styled.button`
-  margin: 5px;
-  min-width: 200px;
-  padding: 10px;
+  margin: 3px;
+  min-width: 120px;
+  padding: 3px;
   border: 3px solid white;
   border-radius: 15px;
   background-color: ${ ({color}) => color };

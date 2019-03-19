@@ -26,16 +26,18 @@ const sizeFormatter = value => {
 
 const ControlsContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   min-height: 200px;
-  width: 100%;
-  align-items: center;
+  width: 25%;
+  align-items: start;
   justify-content: center;
   border: 1px solid ${charcoal};
   margin: 3px;
+  padding: 3px;
   `;
 
 const ControlsTitle = styled.h2`
+  width: 100%;
   color: ${charcoal};
   `;
 
@@ -70,6 +72,30 @@ const ImageControls = (props) => {
         defaultValue={layerSettings.speed}
         value={layerSettings.speed}
         formatter={speedFormatter}
+        firstIcon="up"
+        secondIcon="down"
+         />
+      <SliderInput 
+        name={imageName} 
+        property="opacity"
+        handleChange={handleChange}
+        max={MAX_OPACITY}
+        min={MIN_OPACITY}
+        defaultValue={layerSettings.opacity}
+        value={layerSettings.opacity}
+        formatter={opacityFormatter}
+        firstIcon="up"
+        secondIcon="down"
+         />
+      <SliderInput 
+        name={imageName} 
+        property="size"
+        handleChange={handleChange}
+        max={MAX_SIZE}
+        min={MIN_SIZE}
+        defaultValue={layerSettings.size}
+        value={layerSettings.size}
+        formatter={sizeFormatter}
         firstIcon="up"
         secondIcon="down"
          />

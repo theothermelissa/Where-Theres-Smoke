@@ -25,8 +25,8 @@ const BodyContainer = styled.div`
   right: 0;
   display: flex;
   flex-direction: column;
-  width: 110%;
-  height: 110%;
+  /* width: 110%;
+  height: 110%; */
   align-items: center;
   background-color: gray;
   `;
@@ -34,53 +34,11 @@ const BodyContainer = styled.div`
 const SmokeBackground = styled.div`
   position: relative;
   box-sizing: border-box;
-  height: 70vh;
+  height: 60vh;
   width: 110vw;
   overflow: hidden;
   background: ${props => props.backgroundColor};
   `;
-
-// const BackImage = styled.img`
-//   position: absolute;
-//   opacity: .7;
-//   height: 2400px;
-//   left: -600px;
-//   top: -500px;
-//   width: auto;
-//   margin: 0px;
-//   animation-direction: ${({ direction }) => spin(direction)};
-//   animation-duration: ${ ({ speed }) => speedInSeconds };
-//   animation-timing-function: linear; 
-//   animation-iteration-count: infinite;
-// `;
-
-// const MiddleImage = styled.img`
-//   position: absolute;
-//   left: -300px;
-//   top: -20px;
-//   opacity: .6;
-//   width: auto;
-//   margin: 0px;
-//   height: 1400px;
-//   animation-direction: ${({ direction }) => spin(direction)};
-//   animation-duration: ${ ({ speed }) => speed };
-//   animation-timing-function: linear; 
-//   animation-iteration-count: infinite;
-// `;
-
-// const FrontImage = styled.img`
-//   position: absolute;  
-//   left: 250px;
-//   top: -160px;
-//   opacity: .8;
-//   width: auto;
-//   margin: 0px;
-//   height: 1700px;
-//   animation-direction: ${({ direction }) => spin(direction)};
-//   animation-duration: ${ ({ speed }) => speed };
-//   animation-timing-function: linear; 
-//   animation-iteration-count: infinite;
-//   `;
 
 const Image = styled.img`
   name: ${props => props.imageName};
@@ -111,7 +69,7 @@ class BodyContent extends Component {
         topPosition: 200,
         speed: 80,
         direction: "left",
-        opacity: .9,
+        opacity: .5,
         size: 2200,
       },
       back: {  

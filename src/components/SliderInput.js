@@ -5,7 +5,10 @@ import styled from 'styled-components';
 const Tray = styled.div`
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
   `;
 
 const SliderName = styled.h3`
@@ -14,11 +17,11 @@ const SliderName = styled.h3`
   `;
 
 const SliderBox = styled.div`
-  /* display: flex; */
-  /* flex-flow: row wrap; */
+  /* display: flex;
+  flex-direction: row; */
   position: relative;
-  width: 50vw;
-  padding: 0px 30px;
+  width: 90%;
+  padding: 0px 20px;
   .anticon {
     position: absolute;
     margin-top: 0px;
