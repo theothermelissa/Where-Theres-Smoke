@@ -6,7 +6,7 @@ const Tray = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   `;

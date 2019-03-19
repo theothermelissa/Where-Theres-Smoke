@@ -1,15 +1,15 @@
 export const lightestgray = '#EFEFEF';
-export const mediumgray = '#B5B5B5';
+export const emerald = '#07926A';
 export const charcoal = '#42413E';
-export const mint = '#BAE8DD';
+export const garnet = '#591719';
 export const darkmint = '#1EBC93';
-export const coral = '#F29F9E';
-export const darkcoral = '#EA5959';
-export const cream = '#F4E7D7';
-export const GrayGradient = "linear-gradient(${mediumgray}, ${lightestgray}, white)";
-export const MintGradient = "linear-gradient(${mint}, ${lightmint}, white)";
-export const CoralGradient = "linear-gradient(${coral}, ${lightcoral}, white)";
+export const coral = '#EA5959';
+export const amethyst = '#4C2452';
+export const saphire = '#12219D';
+// export const GrayGradient = "linear-gradient(${mediumgray}, ${lightestgray}, white)";
+// export const MintGradient = "linear-gradient(${mint}, ${lightmint}, white)";
+// export const CoralGradient = "linear-gradient(${coral}, ${lightcoral}, white)";
 
 
 
-// lightestgray, mediumgray, charcoal, mint, lightmint, coral, lightcoral, cream, GrayGradient, MintGradient, CoralGradient
+// lightestgray, emerald, charcoal, garnet, darkmint, coral, amethyst, saphire

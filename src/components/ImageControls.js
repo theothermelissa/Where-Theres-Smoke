@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import SliderInput from './SliderInput';
 // import { Radio } from 'antd';
 import DirectionButtons from './DirectionButtons';
-import { charcoal } from './colors';
+import { saphire, lightestgray } from './colors';
 
 
 const MAX_SPEED = 300;
@@ -24,21 +24,26 @@ const sizeFormatter = value => {
   return `${value}px`;
 };
 
+const convertFromFraction = value => {
+  console.log("Converted from fraction: ", value*100);
+  return value*100;
+}
+
 const ImageControlsContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   min-height: 200px;
   width: 100%;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  border: 1px solid ${charcoal};
-  margin: 3px;
-  padding: 3px;
+  margin: 7px;
+  padding-left: 15px;
+  background-color: ${lightestgray};
+  border-radius: 7px;
   `;
-
 const ControlsTitle = styled.h2`
   width: 100%;
-  color: ${charcoal};
+  color: ${saphire};
   `;
 
 // handleChange,

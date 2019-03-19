@@ -11,7 +11,7 @@ const ColorName = styled.h2`
 
 const ColorButton = styled.button`
   margin: 3px;
-  min-width: 120px;
+  min-width: 15vw;
   padding: 3px;
   border: 3px solid white;
   border-radius: 15px;

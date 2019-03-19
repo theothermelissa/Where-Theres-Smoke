@@ -18,6 +18,10 @@ const sizeInPixels = (size) => {
   // console.log("Size in pixels: ", `${size}px`);
   return `${size}px`
 };
+const convertToFraction = value => {
+  console.log("Converted to fraction: ", value/100);
+  return value/100;
+};
 
 const BodyContainer = styled.div`
   /* margin: -5vw; */
@@ -29,7 +33,7 @@ const BodyContainer = styled.div`
   width: 100%;
   height: 100vh;
   /* align-items: center; */
-  background-color: gray;
+  background-color: white;
   `;
 
 const SmokeBackground = styled.div`
@@ -46,7 +50,7 @@ const Image = styled.img`
   position: absolute;  
   left: ${props => sizeInPixels(props.leftPosition)};
   top: ${props => sizeInPixels(props.topPosition)};
-  opacity: ${props => props.opacity};
+  opacity: ${props => convertToFraction(props.opacity)};
   width: auto;
   margin: 0px;
   height: ${props => sizeInPixels(props.size)};
@@ -70,7 +74,7 @@ class BodyContent extends Component {
         topPosition: 100,
         speed: 80,
         direction: "left",
-        opacity: .5,
+        opacity: 20,
         size: 2200,
       },
       back: {  
@@ -80,7 +84,7 @@ class BodyContent extends Component {
         topPosition: -500,
         direction: "left",
         size: 2400,
-        opacity: .5,
+        opacity: 40,
       },
       middle: {  
         imageName: "middle",
@@ -89,7 +93,7 @@ class BodyContent extends Component {
         topPosition: -20,
         direction: "left",
         size: 1400,
-        opacity: .5,
+        opacity: 70,
       },
       front: {  
         imageName: "front",
@@ -97,7 +101,7 @@ class BodyContent extends Component {
         direction: "left",
         leftPosition: 250,
         topPosition: -160,
-        opacity: .5,
+        opacity: 100,
         size: 1700,
       },
     }

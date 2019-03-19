@@ -7,14 +7,14 @@ const ControlsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* align-items: center;
-  justify-content: center; */
+  align-items: center;
+  justify-content: center;
   `;
 
 const ImageBox = styled.div`
   display: flex;
   flex-direction: row;
-  /* width: 30%; */
+  width: 100%;
   `;
 
 const ControlPanel = (props) => {

@@ -1,10 +1,10 @@
 export default {
-  lightestgray: '#EFEFEF',
-  mediumgray: '#B5B5B5',
+  // lightestgray: '#EFEFEF',
+  coral: '#EA5959',
+  garnet: '#591719',
+  amethyst: '#4C2452',
   charcoal: '#42413E',
-  mint: '#BAE8DD',
-  darkmint: '#1EBC93',
-  coral: '#F29F9E',
-  darkcoral: '#EA5959',
-  cream: '#F4E7D7',
+  saphire: '#12219D',
+  emerald: '#07926A',
+  // cream: '#F4E7D7',
 }
