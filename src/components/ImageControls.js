@@ -12,6 +12,8 @@ const MIN_SIZE = 500;
 const MAX_SIZE = 2500;
 const MIN_OPACITY = 0;
 const MAX_OPACITY = 100;
+const MIN_POSITION = -900;
+const MAX_POSITION = 900;
 
 
 const speedFormatter = value => {
@@ -100,6 +102,30 @@ const ImageControls = (props) => {
         min={MIN_SIZE}
         defaultValue={layerSettings.size}
         value={layerSettings.size}
+        formatter={sizeFormatter}
+        firstIcon="up"
+        secondIcon="down"
+         />
+      <SliderInput 
+        name={imageName} 
+        property="leftPosition"
+        handleChange={handleChange}
+        max={MAX_POSITION}
+        min={MIN_POSITION}
+        defaultValue={layerSettings.leftPosition}
+        value={layerSettings.leftPosition}
+        formatter={sizeFormatter}
+        firstIcon="up"
+        secondIcon="down"
+         />
+      <SliderInput 
+        name={imageName} 
+        property="topPosition"
+        handleChange={handleChange}
+        max={MAX_POSITION}
+        min={MIN_POSITION}
+        defaultValue={layerSettings.topPosition}
+        value={layerSettings.topPosition}
         formatter={sizeFormatter}
         firstIcon="up"
         secondIcon="down"
