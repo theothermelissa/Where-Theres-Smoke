@@ -1,6 +1,7 @@
 import React from "react";
 import { Slider, Icon } from 'antd';
 import styled from 'styled-components';
+import { mycoral, mylightestgray } from './colors';
 
 const Tray = styled.div`
   box-sizing: border-box;
@@ -11,9 +12,9 @@ const Tray = styled.div`
   justify-content: space-between;
   `;
 
-const SliderName = styled.h3`
+const SliderName = styled.p`
   /* font-size: 1.5em; */
-  color: rgba(0, 0, 0, .25);
+  color: ${mylightestgray};
   `;
 
 const SliderBox = styled.div`
@@ -30,7 +31,7 @@ const SliderBox = styled.div`
     height: 16px;
     line-height: 1;
     /* font-size: 16px; */
-    color: rgba(0, 0, 0, .25);
+    color: white;
     &:first-child {
       left: 0;
     }
@@ -68,14 +69,15 @@ const SliderInput = (props) => {
     <Tray>
       <SliderName>{property}</SliderName>
       <SliderBox>
-        <Icon type={firstIcon} />
+        {/* <Icon type={firstIcon} /> */}
         <Slider 
           onChange={changeSetting}
           defaultValue={defaultValue}
           min={min}
           max={max}
-          tipFormatter={formatter} />
-        <Icon type={secondIcon} />
+          tipFormatter={formatter}
+          slider-rail-background-color={mycoral, mylightestgray} />
+        {/* <Icon type={secondIcon} /> */}
       </SliderBox>
     </Tray>
   )

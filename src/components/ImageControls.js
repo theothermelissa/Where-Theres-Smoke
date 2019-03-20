@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import SliderInput from './SliderInput';
 // import { Radio } from 'antd';
 import DirectionButtons from './DirectionButtons';
-import { saphire, lightestgray } from './colors';
+import EaseButtons from './EaseButtons';
+import { mycoral, mylightestgray } from './colors';
 
 
 const MAX_SPEED = 300;
@@ -36,16 +37,17 @@ const ImageControlsContainer = styled.div`
   flex-flow: row wrap;
   min-height: 200px;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin: 7px;
-  padding-left: 15px;
-  background-color: ${lightestgray};
-  border-radius: 7px;
+  align-items: start;
+  justify-content: space-around;
+  margin: 0px 7px;
+  padding: 5px 15px;
+  /* background-color: ${mylightestgray}; */
+  /* border-radius: 7px; */
   `;
 const ControlsTitle = styled.h2`
+  color: ${mycoral};
   width: 100%;
-  color: ${saphire};
+  /* color: ${mycoral}; */
   `;
 
 // handleChange,
@@ -130,6 +132,11 @@ const ImageControls = (props) => {
         firstIcon="up"
         secondIcon="down"
          />
+      <EaseButtons 
+        name={imageName} 
+        animationTimingFunction={layerSettings.animationTimingFunction} 
+        setEase={(ease) => 
+        handleChange(imageName, "animationTimingFunction", ease)} />
     </ImageControlsContainer>
   );
 };

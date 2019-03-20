@@ -11,7 +11,7 @@ import ImageControls from './ImageControls';
 const { lightestgray, mediumgray, charcoal, mint, darkmint, coral, darkcoral, cream } = colors;
 
 const speedInSeconds = (speed) => {
-  console.log("Speed in seconds: ", `${speed}s`);
+  // console.log("Speed in seconds: ", `${speed}s`);
   return `${speed}s`
 };
 const sizeInPixels = (size) => {
@@ -19,7 +19,7 @@ const sizeInPixels = (size) => {
   return `${size}px`
 };
 const convertToFraction = value => {
-  console.log("Converted to fraction: ", value/100);
+  // console.log("Converted to fraction: ", value/100);
   return value/100;
 };
 
@@ -57,7 +57,7 @@ const Image = styled.img`
   animation: 
     ${props => spin(props.direction)} 
     ${ props => speedInSeconds(props.speed) } 
-    ease-in-out 
+    ${props => props.animationTimingFunction} 
     infinite;
   `;
 
@@ -71,38 +71,42 @@ class BodyContent extends Component {
       lower: {  
         imageName: "lower",
         leftPosition: -350,
-        topPosition: 100,
+        topPosition: 50,
         speed: 80,
         direction: "left",
         opacity: 20,
         size: 2200,
+        animationTimingFunction: "linear",
       },
       back: {  
         imageName: "back",
         speed: 150,
         leftPosition: -600,
         topPosition: -500,
-        direction: "left",
+        direction: "right",
         size: 2400,
-        opacity: 40,
+        opacity: 60,
+        animationTimingFunction: "linear",
       },
       middle: {  
         imageName: "middle",
         speed: 150,
         leftPosition: -300,
-        topPosition: -20,
+        topPosition: -200,
         direction: "left",
         size: 1400,
-        opacity: 70,
+        opacity: 60,
+        animationTimingFunction: "linear",
       },
       front: {  
         imageName: "front",
         speed: 150,
-        direction: "left",
+        direction: "right",
         leftPosition: 250,
         topPosition: -160,
-        opacity: 100,
+        opacity: 75,
         size: 1700,
+        animationTimingFunction: "linear",
       },
     }
   }

@@ -10,7 +10,7 @@ const ButtonContainer = styled.span`
   width: 100%;
   margin: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   `;
 
 const ButtonList = ({ handleChange, imageName }) => {

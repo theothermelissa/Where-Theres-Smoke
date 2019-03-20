@@ -1,27 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { mylightestgray } from '../colors';
 
 const ColorName = styled.h2`
   color: white;
-  font-size: .9em;
-  font-weight: bold;
+  /* font-size: .9em; */
+  /* font-weight: bold; */
   text-transform: uppercase;
   margin: 0;
   `;
 
 const ColorButton = styled.button`
   margin: 3px;
-  min-width: 15vw;
+  min-width: 16vw;
   padding: 3px;
-  border: 3px solid white;
+  border: 5px solid white;
   border-radius: 15px;
   background-color: ${ ({color}) => color };
+  /* background-color: ${ ({color}) => color }; */
   `;
 
 
 const Button = ({ name, hexValue, setBackgroundColor }) => (
     <ColorButton color={hexValue} onClick={() => setBackgroundColor(hexValue)} >
-      <ColorName>
+      <ColorName color={hexValue}>
         {name}
       </ColorName>
     </ColorButton>

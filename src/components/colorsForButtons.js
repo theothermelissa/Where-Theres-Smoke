@@ -1,10 +1,11 @@
+import { mycoral, mygold, myroyal, mycharcoal, myemerald } from './Colors';
+
 export default {
   // lightestgray: '#EFEFEF',
-  coral: '#EA5959',
-  garnet: '#591719',
-  amethyst: '#4C2452',
-  charcoal: '#42413E',
-  saphire: '#12219D',
-  emerald: '#07926A',
+  coral: mycoral,
+  gold: mygold,
+  royal: myroyal,
+  charcoal: mycharcoal,
+  emerald: myemerald,
   // cream: '#F4E7D7',
 }
